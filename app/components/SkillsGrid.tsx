@@ -1,44 +1,93 @@
 "use client";
 
 import { motion } from "framer-motion";
+import React from "react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip";
+import {
+  SiNextdotjs,
+  SiReact,
+  SiTypescript,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiPython,
+  SiPostgresql,
+  SiMongodb,
+  SiRedis,
+  SiGit,
+  SiDocker,
+  SiAmazon,
+  SiPostman,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiPhp,
+  SiPrisma,
+  SiSupabase,
+  SiVercel,
+  SiFigma
+} from "react-icons/si";
 
-const skills = [
+type Skill = {
+  name: string;
+  level: string;
+  icon: React.ReactNode;
+};
+
+type SkillGroup = {
+  category: string;
+  color: string;
+  items: Skill[];
+};
+
+const skills: SkillGroup[] = [
   {
     category: "Frontend",
+    color: "from-blue-500/20 to-cyan-500/20",
     items: [
-      { name: "React/Next.js", level: "Advanced", icon: "📱" },
-      { name: "TypeScript", level: "Advanced", icon: "⚡" },
-      { name: "TailwindCSS", level: "Advanced", icon: "🎨" },
+      { name: "HTML5", level: "Advanced", icon: <SiHtml5 /> },
+      { name: "CSS3", level: "Advanced", icon: <SiCss3 /> },
+      { name: "JavaScript", level: "Advanced", icon: <SiJavascript /> },
+      { name: "React/Next.js", level: "Advanced", icon: <SiNextdotjs /> },
+      { name: "TypeScript", level: "Advanced", icon: <SiTypescript /> },
+      { name: "TailwindCSS", level: "Advanced", icon: <SiTailwindcss /> },
     ],
   },
   {
     category: "Backend",
+    color: "from-green-500/20 to-emerald-500/20",
     items: [
-      { name: "Node.js", level: "Advanced", icon: "🚀" },
-      { name: "Python", level: "Intermediate", icon: "🐍" },
-      { name: "APIs", level: "Advanced", icon: "🔌" },
+      { name: "Node.js", level: "Advanced", icon: <SiNodedotjs /> },
+      { name: "Python", level: "Intermediate", icon: <SiPython /> },
+      { name: "PHP", level: "Intermediate", icon: <SiPhp /> },
+      { name: "Prisma", level: "Advanced", icon: <SiPrisma /> },
+      { name: "APIs", level: "Advanced", icon: <SiPostman /> },
     ],
   },
   {
     category: "Database",
+    color: "from-purple-500/20 to-pink-500/20",
     items: [
-      { name: "PostgreSQL", level: "Advanced", icon: "🗃️" },
-      { name: "MongoDB", level: "Intermediate", icon: "🍃" },
-      { name: "Redis", level: "Intermediate", icon: "⚡" },
+      { name: "PostgreSQL", level: "Advanced", icon: <SiPostgresql /> },
+      { name: "MongoDB", level: "Intermediate", icon: <SiMongodb /> },
+      { name: "Redis", level: "Intermediate", icon: <SiRedis /> },
+      { name: "Supabase", level: "Advanced", icon: <SiSupabase /> },
+      { name: "Neon", level: "Intermediate", icon: <SiPostgresql /> },
     ],
   },
   {
     category: "Tools",
+    color: "from-orange-500/20 to-red-500/20",
     items: [
-      { name: "Git", level: "Advanced", icon: "📝" },
-      { name: "Docker", level: "Intermediate", icon: "🐳" },
-      { name: "AWS", level: "Intermediate", icon: "☁️" },
+      { name: "Git", level: "Advanced", icon: <SiGit /> },
+      { name: "Docker", level: "Intermediate", icon: <SiDocker /> },
+      { name: "AWS", level: "Intermediate", icon: <SiAmazon /> },
+      { name: "Vercel", level: "Advanced", icon: <SiVercel /> },
+      { name: "Figma", level: "Advanced", icon: <SiFigma /> },
     ],
   },
 ];
@@ -76,38 +125,45 @@ export default function SkillsGrid() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {skills.map((skillGroup) => (
             <motion.div
               key={skillGroup.category}
               variants={item}
-              className="space-y-4"
+              className="relative p-6 rounded-2xl overflow-hidden"
             >
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                {skillGroup.category}
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
-                {skillGroup.items.map((skill) => (
-                  <TooltipProvider key={skill.name}>
-                    <Tooltip>
-                      <TooltipTrigger>
-                        <motion.div
-                          whileHover={{ scale: 1.05 }}
-                          className="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800"
-                        >
-                          <div className="text-2xl mb-2">{skill.icon}</div>
-                          <div className="text-sm font-medium text-gray-900 dark:text-white">
-                            {skill.name}
-                          </div>
-                        </motion.div>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>{skill.level}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                ))}
+              {/* Background Gradient */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${skillGroup.color} opacity-50`} />
+              
+              {/* Content */}
+              <div className="relative">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+                  {skillGroup.category}
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {skillGroup.items.map((skill) => (
+                    <TooltipProvider key={skill.name}>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <motion.div
+                            whileHover={{ y: -5 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                            className="flex flex-col items-center p-4 bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-md transition-all"
+                          >
+                            <div className="text-3xl mb-3">{skill.icon}</div>
+                            <div className="text-sm font-medium text-gray-900 dark:text-white text-center">
+                              {skill.name}
+                            </div>
+                          </motion.div>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p className="font-medium">{skill.level}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
