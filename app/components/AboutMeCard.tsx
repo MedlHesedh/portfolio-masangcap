@@ -28,7 +28,7 @@ export default function AboutMeCard() {
             <div className="absolute inset-0 bg-blue-50 dark:bg-blue-900/40 rounded-3xl transform -rotate-6"></div>
             <div className="relative rounded-3xl overflow-hidden border-2 border-blue-200 dark:border-blue-800">
               <Image
-                src="/avatar.jpg"
+                src="/like-no-other.jpg"
                 alt="Profile"
                 width={500}
                 height={500}
@@ -42,10 +42,8 @@ export default function AboutMeCard() {
               About Me
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
-              I'm a versatile Full Stack Developer and Project Manager with experience
-              in both software development and construction project management. This
-              unique combination allows me to bridge technical solutions with
-              practical, real-world applications.
+              I’m a Full Stack Developer and Project Manager starting to gain experience in both software development and construction project management. 
+              This combination helps me connect technical solutions with practical, real-world needs.
             </p>
             <div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
@@ -68,9 +66,8 @@ export default function AboutMeCard() {
                 Interests
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Beyond coding, I'm passionate about solving complex problems,
-                continuous learning, and implementing efficient solutions that make
-                a real impact in both the digital and physical world.
+                Beyond coding, I’m passionate about solving complex problems, continuous learning, and implementing efficient solutions that create real impact in both the digital and physical worlds—especially in construction projects. 
+                I’m also exploring my love for the arts, just starting out on that creative journey, and enjoy reading books to broaden my perspective and fuel my curiosity.
               </p>
             </div>
           </div>

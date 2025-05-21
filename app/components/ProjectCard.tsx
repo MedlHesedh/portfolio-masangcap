@@ -88,7 +88,7 @@ export function ProjectsSection() {
     {
       title: "Portfolio Website",
       description: "Modern portfolio website built with Next.js and TailwindCSS",
-      image: "/projects/portfolio.jpg",
+      image: "/like-no-other.jpg",
       tags: ["Next.js", "TailwindCSS", "Framer Motion"],
       githubUrl: "https://github.com/yourusername/portfolio",
       demoUrl: "https://portfolio.yourdomain.com",
@@ -96,7 +96,7 @@ export function ProjectsSection() {
     {
       title: "Project Management App",
       description: "Full-stack project management application with real-time updates",
-      image: "/projects/project-management.jpg",
+      image: "/like-no-other.jpg",
       tags: ["React", "Node.js", "PostgreSQL", "WebSocket"],
       githubUrl: "https://github.com/yourusername/project-management",
       demoUrl: "https://demo.yourdomain.com",
@@ -104,7 +104,7 @@ export function ProjectsSection() {
     {
       title: "E-commerce Platform",
       description: "Modern e-commerce platform with advanced features",
-      image: "/projects/ecommerce.jpg",
+      image: "/like-no-other.jpg",
       tags: ["Next.js", "Stripe", "MongoDB", "TailwindCSS"],
       githubUrl: "https://github.com/yourusername/ecommerce",
       demoUrl: "https://shop.yourdomain.com",

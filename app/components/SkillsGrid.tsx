@@ -49,33 +49,42 @@ const skills: SkillGroup[] = [
     category: "Frontend",
     color: "from-blue-500/20 to-cyan-500/20",
     items: [
-      { name: "HTML5", level: "Advanced", icon: <SiHtml5 /> },
-      { name: "CSS3", level: "Advanced", icon: <SiCss3 /> },
-      { name: "JavaScript", level: "Advanced", icon: <SiJavascript /> },
-      { name: "React/Next.js", level: "Advanced", icon: <SiNextdotjs /> },
-      { name: "TypeScript", level: "Advanced", icon: <SiTypescript /> },
-      { name: "TailwindCSS", level: "Advanced", icon: <SiTailwindcss /> },
+      { name: "HTML5", level: "Intermediate", icon: <SiHtml5 /> },
+      { name: "CSS3", level: "Intermediate", icon: <SiCss3 /> },
+      { name: "JavaScript", level: "Intermediate", icon: <SiJavascript /> },
+      {
+        name: "React/Next.js",
+        level: "Intermediate",
+        icon: (
+          <span className="flex items-center gap-1">
+            <SiReact className="text-black dark:text-white" />
+            <SiNextdotjs className="text-black dark:text-white" />
+          </span>
+        ),
+      },
+      { name: "TypeScript", level: "Intermediate", icon: <SiTypescript /> },
+      { name: "TailwindCSS", level: "Intermediate", icon: <SiTailwindcss /> },
     ],
   },
   {
     category: "Backend",
     color: "from-green-500/20 to-emerald-500/20",
     items: [
-      { name: "Node.js", level: "Advanced", icon: <SiNodedotjs /> },
+      { name: "Node.js", level: "Intermediate", icon: <SiNodedotjs /> },
       { name: "Python", level: "Intermediate", icon: <SiPython /> },
       { name: "PHP", level: "Intermediate", icon: <SiPhp /> },
-      { name: "Prisma", level: "Advanced", icon: <SiPrisma /> },
-      { name: "APIs", level: "Advanced", icon: <SiPostman /> },
+      { name: "Prisma", level: "Intermediate", icon: <SiPrisma /> },
+      { name: "APIs", level: "Intermediate", icon: <SiPostman /> },
     ],
   },
   {
     category: "Database",
     color: "from-purple-500/20 to-pink-500/20",
     items: [
-      { name: "PostgreSQL", level: "Advanced", icon: <SiPostgresql /> },
+      { name: "PostgreSQL", level: "Intermediate", icon: <SiPostgresql /> },
       { name: "MongoDB", level: "Intermediate", icon: <SiMongodb /> },
       { name: "Redis", level: "Intermediate", icon: <SiRedis /> },
-      { name: "Supabase", level: "Advanced", icon: <SiSupabase /> },
+      { name: "Supabase", level: "Intermediate", icon: <SiSupabase /> },
       { name: "Neon", level: "Intermediate", icon: <SiPostgresql /> },
     ],
   },
@@ -83,11 +92,11 @@ const skills: SkillGroup[] = [
     category: "Tools",
     color: "from-orange-500/20 to-red-500/20",
     items: [
-      { name: "Git", level: "Advanced", icon: <SiGit /> },
+      { name: "Git", level: "Intermediate", icon: <SiGit /> },
       { name: "Docker", level: "Intermediate", icon: <SiDocker /> },
       { name: "AWS", level: "Intermediate", icon: <SiAmazon /> },
-      { name: "Vercel", level: "Advanced", icon: <SiVercel /> },
-      { name: "Figma", level: "Advanced", icon: <SiFigma /> },
+      { name: "Vercel", level: "Intermediate", icon: <SiVercel /> },
+      { name: "Figma", level: "Intermediate", icon: <SiFigma /> },
     ],
   },
 ];

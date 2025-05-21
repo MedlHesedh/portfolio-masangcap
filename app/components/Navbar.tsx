@@ -22,7 +22,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <a href="#" className="text-xl font-bold text-gray-900 dark:text-white">
-              Portfolio
+              Medl Masangcap
             </a>
           </div>
 

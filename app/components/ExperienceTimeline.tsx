@@ -4,18 +4,25 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    title: "Full Stack Developer",
-    company: "Tech Company",
-    period: "2023 - Present",
+    title: "Project Manager",
+    company: "ONEkpm Constructions",
+    period: "2024 - Present",
     description:
-      "Leading development of web applications using Next.js, React, and Node.js. Implementing modern frontend architectures and RESTful APIs.",
+      "Currently managing a single construction project. I handle salary distribution, materials purchasing, and on-site team management to keep the project running smoothly and on schedule.",
   },
   {
-    title: "Project Manager",
-    company: "Construction Firm",
-    period: "2021 - 2023",
+    title: "Full Stack Developer",
+    company: "SDG Developments",
+    period: "2023 - Present",
     description:
-      "Managed multiple construction projects, ensuring timely delivery and budget compliance. Implemented digital solutions for project tracking.",
+      "Building full-stack web apps for our construction company using Next.js, React, and Node.js. I handle both frontend and backend, making tools to help manage projects and daily operations more efficiently.",
+  },
+  {
+    title: "Social Media Coordinator",
+    company: "SDG Developments & ONEkpm Constructions",
+    period: "2021 - Present",
+    description:
+      "Handled social media strategy and content creation for both companies. Managed multiple platforms to boost online presence, promote ongoing projects, and engage with the construction community.",
   },
   {
     title: "Junior Developer",
@@ -70,9 +77,8 @@ export default function ExperienceTimeline() {
               <motion.div
                 key={index}
                 variants={item}
-                className={`relative flex flex-col md:flex-row gap-8 ${
-                  index % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
+                className={`relative flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                  }`}
               >
                 {/* Timeline dot */}
                 <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-blue-500 rounded-full transform -translate-x-1/2 mt-6"></div>
