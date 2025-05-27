@@ -11,7 +11,7 @@ const experiences = [
       "Currently managing a single construction project. I handle salary distribution, materials purchasing, and on-site team management to keep the project running smoothly and on schedule.",
   },
   {
-    title: "Full Stack Developer",
+    title: "Full Stack Developer (Self-Employed)",
     company: "SDG Developments",
     period: "2023 - Present",
     description:
