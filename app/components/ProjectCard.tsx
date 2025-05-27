@@ -11,6 +11,7 @@ interface ProjectCardProps {
   tags: string[];
   githubUrl?: string;
   demoUrl?: string;
+  size?: "large" | "medium" | "small";
 }
 
 export default function ProjectCard({
@@ -20,6 +21,7 @@ export default function ProjectCard({
   tags,
   githubUrl,
   demoUrl,
+  size = "medium",
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -28,9 +30,23 @@ export default function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3 }}
-      className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+      className={`bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all ${
+        size === "large"
+          ? "md:col-span-2 md:row-span-2"
+          : size === "small"
+          ? ""
+          : "md:col-span-1 md:row-span-1"
+      }`}
     >
-      <div className="relative h-48 overflow-hidden">
+      <div
+        className={`relative ${
+          size === "large"
+            ? "h-72"
+            : size === "small"
+            ? "h-32"
+            : "h-48"
+        } overflow-hidden`}
+      >
         <Image
           src={image}
           alt={title}
@@ -39,7 +55,15 @@ export default function ProjectCard({
         />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+        <h3
+          className={`font-bold text-gray-900 dark:text-white mb-2 ${
+            size === "large"
+              ? "text-2xl"
+              : size === "small"
+              ? "text-lg"
+              : "text-xl"
+          }`}
+        >
           {title}
         </h3>
         <p className="text-gray-600 dark:text-gray-300 mb-4">{description}</p>
